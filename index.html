@@ -1,12 +1,236 @@
-<!-- Widget JavaScript bundle -->
-<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=de"></script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Apéro #04</title>
+  <style>
+    /* Resetting some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- Search widget element is not visible by default -->
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Fancy Title Styling */
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #ff5f6d;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      animation: slideIn 2s ease-out;
+    }
+
+    /* Search Bar Styling */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+
+    .search-container input {
+      width: 90%;
+      max-width: 600px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 2px solid #ff5f6d;
+      border-radius: 25px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .search-container input:focus {
+      border-color: #ffc371;
+      box-shadow: 0 0 10px rgba(255, 95, 109, 0.5);
+    }
+
+    /* Event Information Section */
+    .event-info {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      animation: zoomIn 1.5s ease-in-out;
+    }
+
+    .event-info h2 {
+      color: #ff5f6d;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .event-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .speaker {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 95, 109, 0.1);
+      border-left: 5px solid #ff5f6d;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .speaker:hover {
+      transform: translateX(10px);
+    }
+
+    .speaker h3 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .speaker p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Footer and Hashtags */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #333;
+      background: rgba(255, 255, 255, 0.8);
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    footer p {
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: #ff5f6d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .event-info {
+        padding: 1rem;
+      }
+
+      .event-info h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎉 Sei dabei beim Business Apéro #04 – ANMELDUNG GEÖFFNET</h1>
+  <p>Verpasse nicht die Gelegenheit, von führenden Branchenexperten zu lernen und neue Kontakte zu knüpfen!</p>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <!-- Trigger input for the search widget -->
+    <input placeholder="Hier suchen" id="searchWidgetTrigger" />
+  </div>
+</header>
+
+<!-- Google AI Gen App Builder Search Widget -->
 <gen-search-widget
   configId="5b739c2e-b342-4a34-9829-18bf36c86b02"
   location="eu"
   triggerId="searchWidgetTrigger">
 </gen-search-widget>
 
-<!-- Element that opens the widget on click. It does not have to be an input -->
-<input placeholder="Hier suchen" id="searchWidgetTrigger" />
+<section class="event-info">
+  <h2>Event Details</h2>
+  <p>Datum: 21. November 2024, 17:30</p>
+  <p>Ort: Bridge, Europaallee 20, 8004 Zürich</p>
+  <p>Veranstalter: Nevefutura, Pineapple AG</p>
+
+  <h2>🎤 Unsere Speaker für den Abend:</h2>
+
+  <!-- Speaker List -->
+  <div class="speaker">
+    <h3>«20% Effizienzsteigerung in 6 Monaten» | Reto Bättig, Cudos AG</h3>
+    <p>Erfahre, wie Cudos AG mithilfe von AI-Tools Projektcontrolling und Qualitätsmanagement verbessert hat.</p>
+  </div>
+
+  <div class="speaker">
+    <h3>«AI-gestützte Produktbeschreibungen bei Chicorée» | Michael Walder, avolut ag, Chicorée Mode AG</h3>
+    <p>Entdecke, wie AI Produktbeschreibungen für Chicorée effizienter macht, auch bei limitierten Daten.</p>
+  </div>
+
+  <div class="speaker">
+    <h3>«AI in der Praxis: Warum 80% nicht genug sind!» | Marco Kuendig, copebit AG</h3>
+    <p>Erlebe die Herausforderungen und Lösungen bei der Dokumentenerkennung und -extraktion mit AI.</p>
+  </div>
+
+  <div class="speaker">
+    <h3>«Reception Marketing Disruption: Big Data & AI» | Peter Erni, Julith Group</h3>
+    <p>Erfahre, wie Big Data und AI neue Marketingpotenziale für CH-Berghilfe erschließen.</p>
+  </div>
+
+  <div class="speaker">
+    <h3>«GenAI for the rest of us» | Raphael Bink, neon</h3>
+    <p>Erlebe, wie AI-Tools ohne großes Budget oder R&D-Teams genutzt werden können.</p>
+  </div>
+
+  <h2>Weitere Informationen</h2>
+  <p>Egal, ob Du Unternehmer bist, im Tech-Bereich arbeitest oder einfach neugierig bist – dieser Event bietet eine großartige Gelegenheit, die neuesten Entwicklungen in AI und Prozessautomatisierung kennenzulernen.</p>
+</section>
+
+<footer>
+  <p>📢 Folge uns und bleib auf dem Laufenden! Hashtags:</p>
+  <p>#BusinessApéro #Networking #Zürich #Bridge #AI #ProcessAutomation #Inno</p>
+</footer>
+
+<!-- Widget JavaScript bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=de"></script>
+
+</body>
+</html>
